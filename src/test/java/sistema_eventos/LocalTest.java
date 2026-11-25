@@ -62,6 +62,6 @@ public class LocalTest {
         evento.setLocal(local);
 
         assertEquals("Centro de Convenções", evento.getLocal().getNome());
-        assertEquals("Rua das ffff, 250", evento.getLocal().getEndereco());
+        assertEquals("Rua das Flores, 250", evento.getLocal().getEndereco());
     }
 }
