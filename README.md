@@ -22,3 +22,8 @@ Acesse http://localhost:8080/swagger-ui/index.html para manipular os dados;
 docker load -i sistema-eventos-image.tar
 
 docker run -d -p 8080:8080 --name app-eventos sistema-eventos:latest
+
+# Rodando do Docker HUB
+Repositório: https://hub.docker.com/r/mateusprog/sistema-eventos
+
+Comando: docker run -d -p 8080:80 mateusprog/sistema-eventos:1.0
