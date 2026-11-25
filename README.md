@@ -1,6 +1,5 @@
 # Sistema de Eventos
-
-# Feito por Mateus Gomes de Oliveira
+Feito por Mateus Gomes de Oliveira
 
 # Descrição da Aplicação
 Aplicação Springboot que utiliza JPA para fazer persistência de dados em um banco de dados MySQL local com melhor manipulação pelo Swagger. Foi feita a modelagem desse banco com três grandes entidades em mente bem como os seus relacionamentos (Local, Evento e Participante). O principal objetivo dessa aplicação é ser capaz de manipular dados de forma simulada e local se utilizando dos endpoints do projeto para simular uma API de CRUD (Create, Read, Update e Delete).
@@ -28,14 +27,23 @@ Develop --> cria-se tudo aqui e é jogado para o GitHUB // Os devidos testes sã
 # Informações sobre os testes automatizados
 
 # Rodando Artefato no Docker
+
+Baixe o artefato do último commit disponível
+
+Depois rode os comandos abaixo na pasta com o .tar presente
+
 docker load -i sistema-eventos-image.tar
 
-docker run -d -p 8080:8080 --name app-eventos sistema-eventos:latest
+docker run -d -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/sistema_eventos -e SPRING_DATASOURCE_USERNAME=root -e SPRING_DATASOURCE_PASSWORD=ceub123456 --name app-eventos sistema-eventos:latest
+
+NOTA: Troque as credenciais baseadas no seu banco local 
 
 # Rodando do Docker HUB
 Repositório: https://hub.docker.com/r/mateusprog/sistema-eventos
 
-Comando: docker run -d -p 8080:80 mateusprog/sistema-eventos:1.0
+docker run -d -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/sistema_eventos -e SPRING_DATASOURCE_USERNAME=root -e SPRING_DATASOURCE_PASSWORD=ceub123456 --name app-eventos mateusprog/sistema-eventos:1.0
+
+NOTA: Troque as credenciais baseadas no seu banco local 
 
 # Links para execuções bem-sucedidas e com falha do GitHub Actions
 Falha: https://github.com/MateusProg/sistema-eventos/actions/runs/45525162588
