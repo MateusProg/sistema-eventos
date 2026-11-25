@@ -8,7 +8,7 @@ Clone o projeto localmente
 
 Tenha acesso ao banco de dados MySQL workbench na máquina;
 
-Crie o shchema inicial no workbench que irá receber as tabelas automaticamente com o nome: "sistema_eventos" ;
+Crie o schema inicial no workbench que irá receber as tabelas automaticamente com o nome: "sistema_eventos" ;
 
 Altere os dados de conexão para os específicos da sua máquina referentes ao banco de dados em application.properties;
 
