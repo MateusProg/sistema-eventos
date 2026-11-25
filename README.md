@@ -17,3 +17,8 @@ Tenha JAVA 17 (Ou maior) instalado na máquina;
 Dê RUN no Main.java;
 
 Acesse http://localhost:8080/swagger-ui/index.html para manipular os dados;
+
+# Rodando Artefato no Docker
+docker load -i sistema-eventos-image.tar
+
+docker run -d -p 8080:8080 --name app-eventos sistema-eventos:latest
