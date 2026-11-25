@@ -40,5 +40,24 @@ jobs:
         run: mvn test-compile -B
 
       # 4. Execução de testes automatizados
-      - name: 4. Executar testes unitários (JUnit)
+      - name: 4.1 Executar testes unitários (JUnit)
         run: mvn test -B
+
+      - name: 4.2 Publicar relatório visual dos testes
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: Relatório JUnit
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+
+      # 5. Geração de um artefato de software
+      - name: 5.1 Empacotar aplicação (.jar / .war)
+        run: mvn package -DskipTests -B
+
+      - name: 5.2 Disponibilizar artefato gerado no GitHub Actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-artifact
+          path: target/*.jar # Altere para target/*.war se for uma aplicação web tradicional
+          retention-days: 7
