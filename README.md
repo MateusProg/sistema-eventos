@@ -1,5 +1,7 @@
 # Sistema de Eventos
 
+# Feito por Mateus Gomes de Oliveira
+
 # Descrição da Aplicação
 Aplicação Springboot que utiliza JPA para fazer persistência de dados em um banco de dados MySQL local com melhor manipulação pelo Swagger. Foi feita a modelagem desse banco com três grandes entidades em mente bem como os seus relacionamentos (Local, Evento e Participante). O principal objetivo dessa aplicação é ser capaz de manipular dados de forma simulada e local se utilizando dos endpoints do projeto para simular uma API de CRUD (Create, Read, Update e Delete).
 
@@ -18,6 +20,13 @@ Dê RUN no Main.java;
 
 Acesse http://localhost:8080/swagger-ui/index.html para manipular os dados;
 
+# Estratégia de versionamento e organização das branches
+Develop --> cria-se tudo aqui e é jogado para o GitHUB // Os devidos testes são feitos // Caso tudo OK --> Merge na Main
+
+# Descrição do pipeline de CI/CD
+
+# Informações sobre os testes automatizados
+
 # Rodando Artefato no Docker
 docker load -i sistema-eventos-image.tar
 
@@ -27,3 +36,8 @@ docker run -d -p 8080:8080 --name app-eventos sistema-eventos:latest
 Repositório: https://hub.docker.com/r/mateusprog/sistema-eventos
 
 Comando: docker run -d -p 8080:80 mateusprog/sistema-eventos:1.0
+
+# Links para execuções bem-sucedidas e com falha do GitHub Actions
+Falha: https://github.com/MateusProg/sistema-eventos/actions/runs/45525162588
+
+Sucesso: https://github.com/MateusProg/sistema-eventos/actions/runs/45525430395
