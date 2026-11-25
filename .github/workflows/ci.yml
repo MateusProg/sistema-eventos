@@ -51,13 +51,18 @@ jobs:
           path: target/surefire-reports/*.xml
           reporter: java-junit
 
-      # 5. Geração de um artefato de software
-      - name: 5.1 Empacotar aplicação (.jar / .war)
+      # 5. Geração do artefato de software (Imagem Docker)
+      - name: 5.1 Empacotar aplicação (.jar) para o container
         run: mvn package -DskipTests -B
 
-      - name: 5.2 Disponibilizar artefato gerado no GitHub Actions
+      - name: 5.2 Construir imagem Docker e exportar como arquivo
+        run: |
+          docker build -t sistema-eventos:${{ github.sha }} -t sistema-eventos:latest .
+          docker save sistema-eventos:latest -o sistema-eventos-image.tar
+
+      - name: 5.3 Disponibilizar imagem Docker como artefato no GitHub Actions
         uses: actions/upload-artifact@v4
         with:
-          name: app-artifact
-          path: target/*.jar # Altere para target/*.war se for uma aplicação web tradicional
+          name: docker-image-sistema-eventos
+          path: sistema-eventos-image.tar
           retention-days: 7
