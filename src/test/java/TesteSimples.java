@@ -1,12 +1,12 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Teste{
+class TesteSimples{
 
     @Test
     void deveSomarDoisNumeros() {
-        Teste teste = new Teste();
-        int resultado = teste.somar(2, 3);
+        Teste test = new Teste();
+        int resultado = test.somar(2, 3);
         assertEquals(5, resultado);
     }
 
