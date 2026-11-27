@@ -19,6 +19,9 @@ Dê RUN no Main.java;
 
 Acesse http://localhost:8080/swagger-ui/index.html para manipular os dados;
 
+# Diagrama de banco de dados esperado
+<img width="794" height="509" alt="image" src="https://github.com/user-attachments/assets/17b84674-6bc2-4daa-a4b8-8904a65c4154" />
+
 # Estratégia de versionamento e organização das branches
 Develop --> cria-se tudo aqui e é jogado para o GitHUB // Os devidos testes são feitos // Caso tudo OK --> Merge na Main
 
